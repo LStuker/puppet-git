@@ -6,11 +6,8 @@ The GIT Puppet Module install git packages
 
 ## Usage
 
-For agent only
-class { 'puppet': }
+class { 'git': }
 
-For server
-class { 'puppet::server': }
 
 ## Requires
 
