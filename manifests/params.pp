@@ -13,11 +13,22 @@
 
 class git::params {
   case $::osfamily {
-    'redhat','debian': {
-      $git_package_name = 'git'
+    'redhat','debian' {
+
+      $package = 'git'
+    }
+    solaris: {
+      case $::kernelrelease {
+        '5.11': {
+          $package = 'git'
+        }
+        '5.10': {
+          $package = 'SFWgit'
+        }
+      }
     }
     default: {
-      fail("Module 'git' is not currently supported on ${::operatingsystem}")
+      warning("Module 'git' is not currently supported on ${::operatingsystem}")
     }
   }
 }
