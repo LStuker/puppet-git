@@ -13,8 +13,10 @@
 
 class git::params {
   case $::osfamily {
-    'redhat','debian' {
-
+    redhat: {
+      $package = 'git'
+    }
+    debian: {
       $package = 'git'
     }
     solaris: {
