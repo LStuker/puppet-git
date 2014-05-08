@@ -17,6 +17,10 @@
 #     what you're doing.
 #     Default: auto-set, platform specific
 #
+#   [*package_provider*]
+#     Name of the package provider.
+#     Default: auto-set, platform specific
+#
 # === Examples
 #
 #  class { git:
@@ -38,6 +42,7 @@ class git(
   $ensure              = 'present',
   $autoupgrade         = false,
   $package             = $git::params::package,
+  $package_provider    = $git::params::package_provider,
 ) inherits git::params {
 
     case $ensure {
@@ -58,6 +63,7 @@ class git(
 
   package { $package:
     ensure    => $package_ensure,
+    provider  => $package_provider,
   }
 
 }
