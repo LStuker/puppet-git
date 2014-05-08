@@ -25,7 +25,7 @@ class git::params {
           $package = 'git'
         }
         '5.10': {
-          $package = 'SFWgit'
+          $package = 'CSWgit'
         }
       }
     }
