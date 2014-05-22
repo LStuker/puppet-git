@@ -14,10 +14,13 @@
 class git::params {
   case $::osfamily {
     redhat: {
-      $package = 'git'
+      $package = 'git-core'
     }
     debian: {
-      $package = 'git'
+      $package = 'git-core'
+    }
+    suse: {
+      $package = 'git-core'
     }
     solaris: {
       case $::kernelrelease {
