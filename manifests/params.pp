@@ -14,7 +14,7 @@
 class git::params {
   case $::osfamily {
     redhat: {
-      $package = 'git-core'
+      $package = 'git'
     }
     debian: {
       $package = 'git-core'
